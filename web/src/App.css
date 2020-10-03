@@ -9,7 +9,52 @@ html {
     width: 80%;
     height: 100%;
     margin: auto;
-    
-    /* styling */
+}
+
+.logo-container {
     background-color: grey;
+}
+
+.logo {
+    /* sizing */
+    width: 40%;
+    height: 100%;
+}
+
+.nav-container {
+    background-color: darkgrey;
+    justify-content: center;
+    align-content: center;
+}
+
+.nav-item {
+    margin-left: 5.5vw; margin-right: 5.5vw;
+}
+
+.body-container {
+    height: 100vh;
+    background-color: lightblue;
+}
+
+.footer-container {
+    background-color: darkgrey;
+    height: auto;
+    width: 80%;
+    border-radius: 20px;
+    text-align: center;
+    align-self: end;
+}
+
+@media only screen and (max-width: 600px) {
+   .main {
+       width: 100%;
+   }
+   
+   .logo {
+       width: 70%;
+   }
+
+   .footer-container {
+       width: 95%;
+   }
 }
