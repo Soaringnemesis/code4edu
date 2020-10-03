@@ -3,6 +3,23 @@ import './App.css';
 import { Grid, Cell, Navigation } from 'react-mdl';
 import { ReactComponent as Logo } from './logo.svg';
 
+// import firebase
+const firebase = require("firebase");
+// Required for side-effects
+require("firebase/firestore");
+// Grab firebase variables from /.env.
+var API_KEY = process.env.REACT_APP_FIREBASE_API_KEY;
+var AUTH_DOMAIN = process.env.REACT_APP_FIREBASE_AUTH_DOMAIN;
+var PROJECT_ID = process.env.REACT_APP_FIREBASE_PROJECT_ID;
+
+firebase.initializeApp({
+  apiKey: API_KEY,
+  authDomain: AUTH_DOMAIN,
+  projectId: PROJECT_ID
+});
+
+var db = firebase.firestore();
+
 function App() {
   return (
     <div className="main">
@@ -20,7 +37,9 @@ function App() {
         </Navigation>
       </Grid>
       <Grid className="body-container">
-        <Cell col={12}></Cell>
+        <Cell col={12}>
+
+        </Cell>
 
 
 
