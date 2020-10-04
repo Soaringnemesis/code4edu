@@ -76,10 +76,8 @@ function App() {
         <Grid className="body-container">
           <Cell col={12}>
             <Textfield
-              onChange={() => {
-                //DocumentCards()
-              }}
-              label="Search for a subject..."
+              onChange={() => {/*WIP*/}}
+              label="Search for a subject... (This isn't implemented yet)"
               floatingLabel
               style={{width: '100%', color: "#FFFFFF"}}
             />
@@ -92,8 +90,9 @@ function App() {
           <Grid className="footer-container">
             <Cell col={12} className="footer">
                 learnmatch | 
-                Site made with <span role="img" aria-label="love">💖</span> by Jack Margeson, Team code4edu MakeUC 2020. 
+                Site made with <span role="img" aria-label="love">💖</span> by Jack Margeson, Ruien Luo, Anas Basheer, and Tafadzwa Machengo, Team code4edu MakeUC 2020. 
                 Check us out on <a href="https://github.com/Soaringnemesis/code4edu" target="_blank" rel="noopener noreferrer">GitHub</a>!
+                &copy; 2020 code4edu
             </Cell>
           </Grid>
         </Grid>
