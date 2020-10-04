@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import { Grid, Cell, Navigation } from 'react-mdl';
 import { ReactComponent as Logo } from './logo.svg';
+import { useAsync } from "react-async"
 import DocumentCard from './DocumentCard.js';
 
 // import firebase
@@ -20,23 +21,35 @@ firebase.initializeApp({
 });
 
 var db = firebase.firestore();
-var documents = [];
-var DocumentCards = [];
-
 const materialsRef = db.collection('materials');
-const allMaterials = materialsRef.get()
-  .then(snapshot => {
-    snapshot.forEach(doc => {
-        documents.push(doc.data());
-    });
-    console.log(documents);
-  }).catch(err => {
-      console.log("Error loading materials.");
-  });
+var documents = [];
+var arrDocumentCards = [];
+
+const getAllMaterialsDocs = async () => {
+  const allMaterials = await materialsRef.get()
+  for (const doc of allMaterials.docs) {
+      documents.push(doc.data());
+  }
+  return documents;
+}
+  
+  const DocumentCards = () => {
+    const { data, error, isPending } = useAsync({ promiseFn: getAllMaterialsDocs})
+    if (isPending) return "Loading...";
+    if (error) return `Something went wrong. ${error.message}`
+    if (data)
+      console.log(documents);
+      for (var i = 0; i < documents.length; i++) {
+        arrDocumentCards.push(<DocumentCard />)
+      }
+      return (
+        arrDocumentCards
+      )
+      return null;
+  }
+
 
 function App() {
-  
-
     return (
       <div className="main">
         <Grid className="logo-container">
@@ -53,6 +66,8 @@ function App() {
           </Navigation>
         </Grid>
         <Grid className="body-container">
+          {DocumentCards()}
+          
           <Grid className="footer-container">
             <Cell col={12} className="footer">
                 learnmatch | 
