@@ -4,9 +4,19 @@ html {
     background-color: black;
 }
 
+.mdl-button.mdl-button--colored {
+    color: #81568F;
+    font-weight: bolder;
+}
+
+.mdl-textfield__input {
+    border-bottom: 1px solid rgb(255, 255, 255);
+}
+
+
 .main {
     /* sizing */
-    width: 80%;
+    width: 100%;
     height: 100%;
     margin: auto;
 }
@@ -33,16 +43,24 @@ html {
 
 .body-container {
     height: auto;
-    background-color: lightblue;
+    background-color: #404040;
 }
 
 .footer-container {
     background-color: darkgrey;
     height: auto;
-    width: 80%;
+    width: 95%;
     border-radius: 20px;
     text-align: center;
     align-self: end;
+}
+
+.mdl-card__supporting-text {
+    color:#dbdbdb;
+}
+
+.e-round-corner {
+    border-radius: 20px;
 }
 
 @media only screen and (max-width: 600px) {
@@ -52,9 +70,5 @@ html {
    
    .logo {
        width: 70%;
-   }
-
-   .footer-container {
-       width: 95%;
    }
 }

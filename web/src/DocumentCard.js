@@ -5,13 +5,16 @@ class DocumentCard extends React.Component {
     render() {
         return(
             <Cell col={6}>
-                <Card shadow={0} style={{width: '320px', height: '320px', margin: 'auto'}}>
-                    <CardTitle expand style={{color: '#fff', background: 'url(http://www.getmdl.io/assets/demos/dog.png) bottom right 15% no-repeat #46B6AC'}}>{this.props.title}</CardTitle>
+                <Card shadow={0} style={{width: '100%', height: '200px', margin: 'auto', 'border-radius': '20px'}}>
+                    <CardTitle expand style={{color: '#000000' }}>{this.props.title}</CardTitle>
                     <CardText>
-                        This is a random description.
+                        {this.props.author}
+                    </CardText>
+                    <CardText>
+                        Grade {this.props.grade}, {this.props.subject}
                     </CardText>
                     <CardActions border>
-                        <Button colored>View Updates</Button>
+                        <a href={this.props.url} target="_blank" rel="noopener noreferrer"><Button colored style={{'border-radius': '20px'}}>View Resource</Button></a>
                     </CardActions>
                 </Card>
             </Cell>
