@@ -32,7 +32,7 @@ html {
 }
 
 .body-container {
-    height: 100vh;
+    height: auto;
     background-color: lightblue;
 }
 
